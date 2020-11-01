@@ -1,17 +1,33 @@
 <?php
 require "vendor/autoload.php";
+require "BerlinClock.php";
 
 use PHPUnit\Framework\TestCase;
 
 class ClockTest extends TestCase
 {
-    public function test_simpleMinute_given00m_shouldReturn0000(){
-        
+
+    private $berlinClock;
+
+    protected function setUp(): void
+    {
+        parent::setUp();
+        $this->berlinClock = new BerlinClock();
     }
 
-    public function test_simpleMinute_given01m_shouldReturnY000(){
 
+    public function test_simpleMinute_given00m_shouldReturnOOOO(){
+        $actual = $this->berlinClock->simpleMinute("00");
+
+        $this->assertEquals("OOOO", $actual);
     }
+
+    public function test_simpleMinute_given01m_shouldReturnYOOO(){
+        $actual = $this->berlinClock->simpleMinute("01");
+
+        $this->assertEquals("YOOO", $actual);
+    }
+
 
 
 
