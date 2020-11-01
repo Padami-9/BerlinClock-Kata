@@ -3,10 +3,10 @@
 class BerlinClock
 {
 
-    public function simpleMinute(String $heure) : String
+    public function simpleMinute(String $minute) : String
     {
-        if($heure == "00") return  "OOOO";
-        if($heure == "01") return  "YOOO";
+        if($minute == "00") return  "OOOO";
+        if($minute == "01") return  "YOOO";
 
 
 
