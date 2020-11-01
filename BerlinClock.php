@@ -16,6 +16,7 @@ class BerlinClock
     public function blockOf5Minutes(String $minute) : String
     {
         if($minute == "00") return "OOOOOOOOOOO";
+        if($minute == "05") return "YOOOOOOOOOO";
     }
 
 }
