@@ -34,6 +34,12 @@ class ClockTest extends TestCase
         $this->assertEquals("YYOO", $actual);
     }
 
+    public function test_simpleMinute_given03m_shouldReturnYYYO(){
+        $actual = $this->actSimpleMinute("03");
+
+        $this->assertEquals("YYYO", $actual);
+    }
+
 
 
 
