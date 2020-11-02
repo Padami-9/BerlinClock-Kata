@@ -3,6 +3,27 @@
 class BerlinClock
 {
 
+    public function clock(String $hour, String $minute, String $second): String
+    {
+        //$hour = date('H');
+        //$minute = date('i');
+        //$second = date('s');
+
+        $berlinClock = "";
+
+        $berlinClock .= $this->second($second);
+        $berlinClock .= "\n";
+        $berlinClock .= $this->blockOf5Hours($hour);
+        $berlinClock .= "\n";
+        $berlinClock .= $this->simpleHour($hour);
+        $berlinClock .= "\n";
+        $berlinClock .= $this->blockOf5Minutes($minute);
+        $berlinClock .= "\n";
+        $berlinClock .= $this->simpleMinute($minute);
+
+        return $berlinClock;
+    }
+
     public function simpleMinute(string $minute): string
     {
         $patern0_5 = '/^.[0,5]{1}$/';
@@ -72,6 +93,7 @@ class BerlinClock
         $patern2 = '/^[2].$/';
         $patern0To4 = '/^.[0-4]{1}$/';
         $patern5To9 = '/^.[5-9]{1}$/';
+        $patern0To3 = '/^.[0-3]{1}$/';
 
         if (preg_match($patern0, $hour)) {
             if (preg_match($patern0To4, $hour)) return "OOOO";
@@ -80,7 +102,7 @@ class BerlinClock
             if (preg_match($patern0To4, $hour)) return "RROO";
             else if (preg_match($patern5To9, $hour)) return "RRRO";
         } else if (preg_match($patern2, $hour)) {
-            if (preg_match($patern0To4, $hour)) return "RRRR";
+            if (preg_match($patern0To3, $hour)) return "RRRR";
         }
     }
 
@@ -90,22 +112,6 @@ class BerlinClock
         if($int%2 == 0) return "R";
         else return "O";
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 }
 

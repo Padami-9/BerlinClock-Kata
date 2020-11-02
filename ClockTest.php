@@ -300,6 +300,19 @@ class ClockTest extends TestCase
         $this->assertEquals("O", $actual);
     }
 
+    public function test_berlinClock_given00h00m00s_shouldReturnR_OOOO_OOOO_OOOOOOOOOOO_OOOO(){
+        $actual = $this->berlinClock->clock("00","00","00");
+
+        $this->assertEquals("R\nOOOO\nOOOO\nOOOOOOOOOOO\nOOOO", $actual);
+    }
+
+    public function test_berlinClock_given23h59m59s_shouldReturnO_RRRR_RRRR_YYRYYRYYRYY_YYYY(){
+        $actual = $this->berlinClock->clock("23", "59","59");
+
+        $this->assertEquals("O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY", $actual);
+    }
+
+
 
     private function actSimpleMinute(string $minute): string
     {
