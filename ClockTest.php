@@ -154,7 +154,7 @@ class ClockTest extends TestCase
     }
 
     public function test_simpleHour_given00h_shouldReturnOOOO(){
-        $actual = $this->berlinClock->simpleHour("00");
+        $actual = $this->actSimpleHour("00");
 
         $this->assertEquals("OOOO", $actual);
     }
@@ -170,6 +170,10 @@ class ClockTest extends TestCase
 
     private function actBlockOf5Minutes(String $minute) : String{
         return $this->berlinClock->blockOf5Minutes($minute);
+    }
+
+    private function actSimpleHour(String $Hour) : String{
+        return $this->berlinClock->simpleHour($Hour);
     }
 
 }
