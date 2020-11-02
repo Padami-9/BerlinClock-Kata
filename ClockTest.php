@@ -288,6 +288,11 @@ class ClockTest extends TestCase
         $this->assertEquals("RRRR", $actual);
     }
 
+    public function test_secondPair_given00_shouldReturnR(){
+        $actual = $this->berlinClock->second("00");
+
+        $this->assertEquals("R", $actual);
+    }
 
 
 

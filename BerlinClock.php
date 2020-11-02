@@ -83,5 +83,26 @@ class BerlinClock
             if (preg_match($patern0To4, $hour)) return "RRRR";
         }
     }
+
+    public function second(String $second): String{
+        if($second == "00") return "R";
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
