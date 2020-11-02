@@ -3,7 +3,7 @@
 class BerlinClock
 {
 
-    public function clock(String $hour, String $minute, String $second): String
+    public function clock(string $hour, string $minute, string $second): string
     {
         //$hour = date('H');
         //$minute = date('i');
@@ -106,10 +106,11 @@ class BerlinClock
         }
     }
 
-    public function second(String $second): String{
+    public function second(string $second): string
+    {
         $int = intval($second);
 
-        if($int%2 == 0) return "R";
+        if ($int % 2 == 0) return "R";
         else return "O";
     }
 
