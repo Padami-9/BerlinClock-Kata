@@ -70,5 +70,10 @@ class BerlinClock
         else if(preg_match($patern4_9, $hour)) return  "RRRR";
     }
 
+    public function blockOf5Hours(String $hour) : String
+    {
+     if($hour == "00") return "OOOO";
+    }
+
 }
 
