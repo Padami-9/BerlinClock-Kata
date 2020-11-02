@@ -289,13 +289,13 @@ class ClockTest extends TestCase
     }
 
     public function test_secondPair_given00_shouldReturnR(){
-        $actual = $this->berlinClock->second("00");
+        $actual = $this->actSecond("00");
 
         $this->assertEquals("R", $actual);
     }
 
     public function test_secondNotPair_given01_shouldReturnO(){
-        $actual = $this->berlinClock->second("01");
+        $actual = $this->actSecond("01");
 
         $this->assertEquals("O", $actual);
     }
@@ -321,5 +321,9 @@ class ClockTest extends TestCase
         return $this->berlinClock->blockOf5Hours($hour);
     }
 
+    private function actSecond(string $second): string
+    {
+        return $this->berlinClock->second($second);
+    }
 
 }
