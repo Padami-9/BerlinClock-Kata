@@ -174,6 +174,7 @@ class ClockTest extends TestCase
 
     private function actSimpleHour(String $Hour) : String{
         return $this->berlinClock->simpleHour($Hour);
+
     }
 
 }
