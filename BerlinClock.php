@@ -5,12 +5,7 @@ class BerlinClock
 
     public function clock(string $hour, string $minute, string $second): string
     {
-        //$hour = date('H');
-        //$minute = date('i');
-        //$second = date('s');
-
         $berlinClock = "";
-
         $berlinClock .= $this->second($second);
         $berlinClock .= "\n";
         $berlinClock .= $this->blockOf5Hours($hour);
