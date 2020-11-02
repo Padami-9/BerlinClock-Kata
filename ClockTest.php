@@ -166,6 +166,7 @@ class ClockTest extends TestCase
 
     private function actBlockOf5Minutes(String $minute) : String{
         return $this->berlinClock->blockOf5Minutes($minute);
+
     }
 
 }
