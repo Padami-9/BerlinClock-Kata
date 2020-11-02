@@ -86,6 +86,7 @@ class BerlinClock
 
     public function second(String $second): String{
         if($second == "00") return "R";
+        if($second == "01") return "O";
     }
 
 

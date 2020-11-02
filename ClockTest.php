@@ -294,7 +294,11 @@ class ClockTest extends TestCase
         $this->assertEquals("R", $actual);
     }
 
+    public function test_secondNotPair_given01_shouldReturnO(){
+        $actual = $this->berlinClock->second("01");
 
+        $this->assertEquals("O", $actual);
+    }
 
 
     private function actSimpleMinute(string $minute): string
