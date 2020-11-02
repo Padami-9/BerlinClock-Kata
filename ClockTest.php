@@ -159,6 +159,66 @@ class ClockTest extends TestCase
         $this->assertEquals("OOOO", $actual);
     }
 
+    public function test_simpleHour_given01h_shouldReturnROOO(){
+        $actual = $this->actSimpleHour("01");
+
+        $this->assertEquals("ROOO", $actual);
+    }
+
+    public function test_simpleHour_given02h_shouldReturnRROO(){
+        $actual = $this->actSimpleHour("02");
+
+        $this->assertEquals("RROO", $actual);
+    }
+
+    public function test_simpleHour_given03h_shouldReturnRRRO(){
+        $actual = $this->actSimpleHour("03");
+
+        $this->assertEquals("RRRO", $actual);
+    }
+
+    public function test_simpleHour_given04h_shouldReturnRRRR(){
+        $actual = $this->actSimpleHour("04");
+
+        $this->assertEquals("RRRR", $actual);
+    }
+
+    public function test_simpleHour_given15h_shouldReturnOOOO(){
+        $actual = $this->actSimpleHour("15");
+
+        $this->assertEquals("OOOO", $actual);
+    }
+
+    public function test_simpleHour_given16h_shouldReturnROOO(){
+        $actual = $this->actSimpleHour("16");
+
+        $this->assertEquals("ROOO", $actual);
+    }
+
+    public function test_simpleHour_given17h_shouldReturnRROO(){
+        $actual = $this->actSimpleHour("17");
+
+        $this->assertEquals("RROO", $actual);
+    }
+
+    public function test_simpleHour_given18h_shouldReturnRRRO(){
+        $actual = $this->actSimpleHour("18");
+
+        $this->assertEquals("RRRO", $actual);
+    }
+
+    public function test_simpleHour_given19h_shouldReturnRRRR(){
+        $actual = $this->actSimpleHour("19");
+
+        $this->assertEquals("RRRR", $actual);
+    }
+
+    public function test_simpleHour_given20h_shouldReturnOOOO(){
+        $actual = $this->actSimpleHour("20");
+
+        $this->assertEquals("OOOO", $actual);
+    }
+
 
 
 
@@ -174,7 +234,6 @@ class ClockTest extends TestCase
 
     private function actSimpleHour(String $Hour) : String{
         return $this->berlinClock->simpleHour($Hour);
-
     }
 
 }

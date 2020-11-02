@@ -57,7 +57,17 @@ class BerlinClock
 
     public function simpleHour(String $hour) : String
     {
-        if($hour == "00") return "OOOO";
+        $patern0_5 = '/^.[0,5]{1}$/';
+        $patern1_6 = '/^.[1,6]{1}$/';
+        $patern2_7 = '/^.[2,7]{1}$/';
+        $patern3_8 = '/^.[3,8]{1}$/';
+        $patern4_9 = '/^.[4,9]{1}$/';
+
+        if(preg_match($patern0_5, $hour)) return  "OOOO";
+        else if(preg_match($patern1_6, $hour)) return  "ROOO";
+        else if(preg_match($patern2_7, $hour)) return  "RROO";
+        else if(preg_match($patern3_8, $hour)) return  "RRRO";
+        else if(preg_match($patern4_9, $hour)) return  "RRRR";
     }
 
 }
