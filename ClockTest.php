@@ -316,6 +316,12 @@ class ClockTest extends TestCase
         $this->assertEquals("O\nRRRR\nRRRO\nYYRYYRYYRYY\nYYYY", $actual);
     }
 
+    public function test_berlinClock_given17h32m14s_shouldReturnR_RRRO_RROO_YYRYYROOOOO_YYOO()
+    {
+        $actual = $this->actClock("17", "32", "14");
+
+        $this->assertEquals("R\nRRRO\nRROO\nYYRYYROOOOO\nYYOO", $actual);
+    }
 
     private function actSimpleMinute(string $minute): string
     {
