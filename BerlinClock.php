@@ -3,11 +3,6 @@
 class BerlinClock
 {
 
-    public function berlinClock() : String
-    {
-
-    }
-
     public function simpleMinute(String $minute) : String
     {
         $patern0_5 = '/^.[0,5]{1}$/';
@@ -58,6 +53,11 @@ class BerlinClock
             if(preg_match($patern0To4, $minute)) return "YYRYYRYYRYO";
             else if(preg_match($patern5To9, $minute)) return "YYRYYRYYRYY";
         }
+    }
+
+    public function simpleHour(String $hour) : String
+    {
+        if($hour == "00") return "OOOO";
     }
 
 }
